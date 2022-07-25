@@ -33,4 +33,5 @@ COPY Rprofile.site /usr/local/lib/R/etc/
 
 EXPOSE 3838
 
-CMD ["R", "-q", "-e", "shiny::runApp('/root/shiny_app_example')"]
+# to run on shinyproxy, comment out this line before deployment
+# CMD ["R", "-q", "-e", "shiny::runApp('/root/shiny_app_example')"]
