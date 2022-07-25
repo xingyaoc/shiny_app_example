@@ -22,5 +22,4 @@ jobs:
     - name: Build the Shiny App Example Docker image
       run: |
         docker build . --tag ghcr.io/xingyaoc/shiny_app_example:latest
-        docker run ghcr.io/xingyaoc/shiny_app_example:latest
         docker push ghcr.io/xingyaoc/shiny_app_example:latest
