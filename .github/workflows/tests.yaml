@@ -1,6 +1,9 @@
 name: tests
 
-on: [pull_request, push]
+on:
+  pull_request:
+    branches:
+      - master
 
 jobs:
   tests:
@@ -10,6 +13,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install dependencies
-        run: Rscript -e "install.packages(c('testthat', 'tidyverse', 'here'))"
+        run: Rscript -e "install.packages(c('testthat'))"
+
       - name: Run Tests
         run: Rscript -e "testthat::test_dir('tests')"
